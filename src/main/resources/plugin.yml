@@ -1,0 +1,5 @@
+name: SlackNotify
+version: ${project.version}
+description: Service plugin to handle Slack notifications of important events
+author: redwall_hp
+main: io.github.redwallhp.slacknotify.SlackNotify
