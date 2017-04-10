@@ -26,6 +26,7 @@ SlackNotify.send(new SlackMessage()
 ```
 
 ![Sceenshot of Slack](http://i.imgur.com/MHWojAR.png)
+*Note: The Markdown parsing issue in the above screenshot was corrected shortly after it was taken.*
 
 If you're familiar with the Slack API, you may note that these messages [are actually "attachments"](https://api.slack.com/docs/message-attachments) in Slack parlance instead of fully separate messages. This design decision was made both for simplicity and for more bang for your rate limit buck. By bundling multiple attachments into one message request, you can send more messages in a short span of time.
 
