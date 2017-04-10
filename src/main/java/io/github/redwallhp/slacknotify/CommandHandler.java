@@ -23,7 +23,7 @@ public class CommandHandler implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (cmd.getName().equalsIgnoreCase("slacknotify")) {
             if (args.length == 0) {
-                sender.sendMessage(ChatColor.RED + "Valid subcommands: reload");
+                sender.sendMessage(ChatColor.RED + "Valid subcommands: reload, send");
             }
             else if (args[0].equalsIgnoreCase("reload")) {
                 reloadCommand(sender);
