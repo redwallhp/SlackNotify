@@ -33,7 +33,7 @@ public class MessageHandler extends BukkitRunnable {
 
     public void run() {
         // Avoid rate limiting by sending messages in batches of 3
-        // and only calling run() every 3
+        // and only calling run() every 3 seconds
         if (queue.size() > 0) {
 
             // Grab up to five messages from the queue
