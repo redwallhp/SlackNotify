@@ -17,7 +17,7 @@ SlackNotify.send("Hello World!");
 
 // And now for something completely different
 SlackNotify.send(new SlackMessage()
-    .setText("\*Fancy\* \_formatted\_ text!", "Plain text for notifications.")
+    .setText("*Fancy* _formatted_ ~text~!", "Plain text for notifications.")
     .setColor("good")
     .setImage("http://i.imgur.com/H2XMMir.jpg")
     .addField("Key", "Value", true)
