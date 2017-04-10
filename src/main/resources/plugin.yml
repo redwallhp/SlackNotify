@@ -3,3 +3,14 @@ version: ${project.version}
 description: Service plugin to handle Slack notifications of important events
 author: redwall_hp
 main: io.github.redwallhp.slacknotify.SlackNotify
+
+permissions:
+  slacknotify.admin:
+    description: Access /slacknotify
+
+commands:
+  slacknotify:
+    usage: /slacknotify <subcommand>
+    description: Administer SlackNotify
+    permission: slacknotify.admin
+    permission-message: You don't have permission to do that.

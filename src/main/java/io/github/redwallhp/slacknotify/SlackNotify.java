@@ -13,6 +13,7 @@ public class SlackNotify extends JavaPlugin {
     public void onEnable() {
         instance = this;
         messageHandler = new MessageHandler();
+        new CommandHandler();
     }
 
 
