@@ -1,8 +1,9 @@
 package io.github.redwallhp.slacknotify;
 
 import io.github.redwallhp.slacknotify.listeners.KickListener;
+import io.github.redwallhp.slacknotify.listeners.ModularListener;
+import io.github.redwallhp.slacknotify.listeners.RegexListener;
 import org.bukkit.event.HandlerList;
-import org.bukkit.event.Listener;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -17,20 +18,22 @@ public class ListenerManager {
 
 
     private SlackNotify plugin;
-    private Map<String, Listener> listeners;
+    private Map<String, ModularListener> listeners;
 
 
     public ListenerManager() {
         plugin = SlackNotify.getInstance();
         listeners = new HashMap<>();
         listeners.put("kick", new KickListener());
+        listeners.put("regex", new RegexListener());
     }
 
 
     public void load() {
         Set<String> enabled = new HashSet<>();
-        for (Map.Entry<String, Listener> entry : listeners.entrySet()) {
+        for (Map.Entry<String, ModularListener> entry : listeners.entrySet()) {
             if (isEnabled(entry.getKey())) {
+                entry.getValue().load();
                 plugin.getServer().getPluginManager().registerEvents(entry.getValue(), plugin);
                 enabled.add(entry.getKey());
             }
@@ -42,8 +45,9 @@ public class ListenerManager {
 
 
     public void unload() {
-        for (Map.Entry<String, Listener> entry : listeners.entrySet()) {
+        for (Map.Entry<String, ModularListener> entry : listeners.entrySet()) {
             HandlerList.unregisterAll(entry.getValue());
+            entry.getValue().unload();
         }
     }
 

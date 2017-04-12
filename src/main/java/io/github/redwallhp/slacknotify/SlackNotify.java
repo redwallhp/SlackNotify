@@ -21,6 +21,7 @@ public class SlackNotify extends JavaPlugin {
 
     public void onDisable() {
         messageHandler.cancel();
+        listenerManager.unload();
     }
 
 

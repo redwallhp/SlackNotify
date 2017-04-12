@@ -5,3 +5,6 @@ channel: "#channel"
 listeners:
   kick:
     enabled: false
+  regex:
+    enabled: false
+    patterns: []

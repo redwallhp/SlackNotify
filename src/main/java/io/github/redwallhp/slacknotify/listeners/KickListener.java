@@ -4,11 +4,19 @@ import io.github.redwallhp.slacknotify.SlackMessage;
 import io.github.redwallhp.slacknotify.SlackNotify;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerKickEvent;
 
 
-public class KickListener implements Listener {
+/**
+ * Send a notification when a player is kicked
+ */
+public class KickListener implements ModularListener {
+
+
+    public void load() {}
+
+
+    public void unload() {}
 
 
     @EventHandler
