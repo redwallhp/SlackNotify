@@ -42,6 +42,7 @@ public class CommandHandler implements CommandExecutor {
      */
     private void reloadCommand(CommandSender sender) {
         plugin.reloadConfig();
+        plugin.reloadListeners();
         sender.sendMessage(ChatColor.LIGHT_PURPLE + "Configuration reloaded.");
     }
 

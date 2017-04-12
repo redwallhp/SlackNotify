@@ -1,2 +1,7 @@
 token: "tokengoeshere"
 channel: "#channel"
+
+
+listeners:
+  kick:
+    enabled: false

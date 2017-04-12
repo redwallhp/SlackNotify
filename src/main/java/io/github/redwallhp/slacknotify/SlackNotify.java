@@ -8,11 +8,13 @@ public class SlackNotify extends JavaPlugin {
 
     private static SlackNotify instance;
     private MessageHandler messageHandler;
+    private ListenerManager listenerManager;
 
 
     public void onEnable() {
         instance = this;
         messageHandler = new MessageHandler();
+        listenerManager = new ListenerManager();
         new CommandHandler();
     }
 
@@ -24,6 +26,12 @@ public class SlackNotify extends JavaPlugin {
 
     public static SlackNotify getInstance() {
         return instance;
+    }
+
+
+    public void reloadListeners() {
+        listenerManager.unload();
+        listenerManager.load();
     }
 
 
