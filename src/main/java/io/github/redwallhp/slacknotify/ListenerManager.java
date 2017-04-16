@@ -26,6 +26,7 @@ public class ListenerManager {
         listeners = new HashMap<>();
         listeners.put("kick", new KickListener());
         listeners.put("regex", new RegexListener());
+        load();
     }
 
 

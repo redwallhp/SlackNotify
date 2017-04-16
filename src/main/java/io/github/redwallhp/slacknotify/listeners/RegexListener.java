@@ -53,6 +53,7 @@ public class RegexListener implements ModularListener {
             matcher = pattern.matcher(message);
             if (matcher.find()) {
                 notify(message, player, isCommand);
+                Bukkit.getLogger().info("Matched " + pattern.toString());
                 break;
             }
         }
