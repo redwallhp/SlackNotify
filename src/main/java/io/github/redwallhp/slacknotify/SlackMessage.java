@@ -100,7 +100,7 @@ public class SlackMessage {
      * @param author the name
      */
     public SlackMessage setAuthor(String author) {
-        json.put("author", author);
+        json.put("author_name", author);
         return this;
     }
 
